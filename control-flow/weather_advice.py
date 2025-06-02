@@ -1,5 +1,5 @@
-print("\n what is the weather like today? (sunny/rainy/cold):.\n");
-weather = input("enter the weather: ");
+
+weather = input("what's the weather like today? (sunny/rainy/cold): ").lower();
 if weather == "sunny":
     print("Wear a t-shirt and sunglasses.");
 elif weather == "rainy":
