@@ -28,7 +28,14 @@ SECRET_KEY = "django-insecure-xo2c3u-thd%2%3o0uoikjwgj9g--e)up$9(z^ct+b%(olp0t6(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "nshutikevin.pythonanywhere.com",
+    "www.nshutikevin.pythonanywhere.com",
+    "127.0.0.1",
+    "localhost"
+]
+
+
 
 
 # Application definition
@@ -105,11 +112,14 @@ WSGI_APPLICATION = "Prodev_backend.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.mysql'),
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
+        'NAME': os.getenv('DB_NAME'),  # e.g. nshutikevin$prodev
+        'USER': os.getenv('DB_USER'),  # e.g. nshutikevin
         'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),  # e.g. nshutikevin.mysql.pythonanywhere-services.com
+        'PORT': os.getenv('DB_PORT', '3306'),
         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
         }
     }
 }
